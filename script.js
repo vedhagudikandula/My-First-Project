@@ -1,149 +1,279 @@
-```javascript
-"use strict";
-
-/*
- * Solar Powered Ironing System
- * Demo Monitoring Script
- *
- * This version uses simulated sensor values.
- * It does NOT control a real electric iron.
- */
-
-// ------------------------------
-// Demo sensor values
-// ------------------------------
-
-const solarVoltage = 24.0;
-const solarCurrent = 4.5;
-
-const batteryVoltage = 25.2;
-const batteryCapacity = 80;
-
-// ------------------------------
-// Calculate solar power
-// ------------------------------
-
-const solarPower = solarVoltage * solarCurrent;
-
-// ------------------------------
-// Display values in the console
-// ------------------------------
-
-console.log("Solar Powered Ironing System");
-console.log("-----------------------------");
-console.log("Solar Voltage:", solarVoltage.toFixed(2), "V");
-console.log("Solar Current:", solarCurrent.toFixed(2), "A");
-console.log("Solar Power:", solarPower.toFixed(2), "W");
-console.log("Battery Voltage:", batteryVoltage.toFixed(2), "V");
-console.log("Battery Level:", batteryCapacity + "%");
-
-// ------------------------------
-// Create dashboard
-// ------------------------------
-
-function createDashboard() {
-    const dashboard = document.createElement("section");
-
-    dashboard.id = "dashboard";
-
-    dashboard.innerHTML = `
-        <div class="container">
-
-            <div class="section-title">
-                <h2>Solar Energy Dashboard</h2>
-                <p>Current system demonstration values</p>
-            </div>
-
-            <div class="cards">
-
-                <div class="card">
-                    <h3>☀️ Solar Voltage</h3>
-                    <p>
-                        <span id="solar-voltage">
-                            ${solarVoltage.toFixed(2)}
-                        </span>
-                        V
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>⚡ Solar Current</h3>
-                    <p>
-                        <span id="solar-current">
-                            ${solarCurrent.toFixed(2)}
-                        </span>
-                        A
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>🔌 Solar Power</h3>
-                    <p>
-                        <span id="solar-power">
-                            ${solarPower.toFixed(2)}
-                        </span>
-                        W
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>🔋 Battery Voltage</h3>
-                    <p>
-                        <span id="battery-voltage">
-                            ${batteryVoltage.toFixed(2)}
-                        </span>
-                        V
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>🔋 Battery Level</h3>
-                    <p>
-                        <span id="battery-level">
-                            ${batteryCapacity}
-                        </span>
-                        %
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>🌱 System Status</h3>
-                    <p id="system-status">
-                        Solar System Active
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-    `;
-
-    document.body.insertBefore(
-        dashboard,
-        document.querySelector(".contact")
-    );
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-// ------------------------------
-// Update dashboard
-// ------------------------------
+html {
+    scroll-behavior: smooth;
+}
 
-function updateDashboard() {
-    const voltageElement =
-        document.getElementById("solar-voltage");
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7f6;
+    color: #222;
+    line-height: 1.6;
+}
 
-    const currentElement =
-        document.getElementById("solar-current");
+header {
+    background: #087f3e;
+    padding: 18px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-    const powerElement =
-        document.getElementById("solar-power");
+nav {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    const batteryVoltageElement =
-        document.getElementById("battery-voltage");
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
 
-    const batteryLevelElement =
-        document.getElementById("battery-level");
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
 
-    if (
-        !voltageElement ||
-        !
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    opacity: 0.75;
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 8%;
+    background: linear-gradient(135deg, #e5f8ec, #fff9dc);
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.sun {
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    color: #075c2d;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.button,
+.control-button,
+.reset-button {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 13px 25px;
+}
+
+.button {
+    display: inline-block;
+    background: #f5b400;
+    color: #222;
+    text-decoration: none;
+}
+
+.button:hover {
+    background: #d99f00;
+}
+
+section {
+    padding: 70px 8%;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    color: #075c2d;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #666;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card h3 {
+    color: #087f3e;
+    margin-bottom: 10px;
+}
+
+.flow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.flow-box {
+    width: 170px;
+    min-height: 130px;
+    background: white;
+    border: 2px solid #087f3e;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+.flow-box span {
+    display: block;
+    font-size: 35px;
+    margin-bottom: 8px;
+}
+
+.flow-box strong {
+    display: block;
+    color: #087f3e;
+}
+
+.flow-box small {
+    display: block;
+    color: #666;
+    margin-top: 5px;
+}
+
+.arrow {
+    color: #087f3e;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.simulation-section {
+    background: #eef8f1;
+}
+
+.simulation-panel {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: end;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.control-group label {
+    font-weight: bold;
+    color: #075c2d;
+}
+
+.control-group input {
+    width: 100%;
+}
+
+.control-group span {
+    font-weight: bold;
+}
+
+.control-button {
+    background: #087f3e;
+    color: white;
+}
+
+.control-button:hover {
+    background: #065f2f;
+}
+
+.reset-button {
+    background: #dddddd;
+    color: #222;
+}
+
+.reset-button:hover {
+    background: #cccccc;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px 0;
+    font-weight: bold;
+}
+
+.status-light {
+    width: 14px;
+    height: 14px;
+    background: #888;
+    border-radius: 50%;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.metric {
+    background: #f5f8f6;
+    border-radius: 12px;
+    padding: 22px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+.metri
