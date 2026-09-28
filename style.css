@@ -1,0 +1,247 @@
+```css
+/* =========================================
+   Solar Powered Ironing System
+   Main Website Styles
+   ========================================= */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7f6;
+    color: #222222;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #087f3e;
+    padding: 18px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo */
+.logo {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navigation list */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+/* Navigation links */
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+}
+
+nav ul li a:hover {
+    opacity: 0.75;
+}
+
+/* Hero section */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 8%;
+    background: linear-gradient(
+        135deg,
+        #e5f8ec,
+        #fff9dc
+    );
+}
+
+/* Hero content */
+.hero-content {
+    max-width: 850px;
+}
+
+/* Hero heading */
+.hero h1 {
+    color: #075c2d;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+/* Hero paragraph */
+.hero p {
+    color: #444444;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* Main button */
+.button {
+    display: inline-block;
+    background-color: #f5b400;
+    color: #222222;
+    padding: 13px 26px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s ease,
+                background-color 0.2s ease;
+}
+
+.button:hover {
+    background-color: #d99f00;
+    transform: translateY(-2px);
+}
+
+/* Sections */
+section {
+    padding: 70px 8%;
+}
+
+/* Main container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Section title */
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Section heading */
+.section-title h2 {
+    color: #075c2d;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+/* Section subtitle */
+.section-title p {
+    color: #666666;
+    font-size: 17px;
+}
+
+/* Card grid */
+.cards {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* Cards */
+.card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Card hover */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Card heading */
+.card h3 {
+    color: #087f3e;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+/* Card paragraph */
+.card p {
+    color: #555555;
+}
+
+/* Working section */
+.working {
+    background-color: #eef8f1;
+}
+
+/* Steps container */
+.steps {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Individual step */
+.step {
+    background-color: #ffffff;
+    margin-bottom: 18px;
+    padding: 20px;
+    border-left: 5px solid #f5b400;
+    border-radius: 8px;
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* Step heading */
+.step h3 {
+    color: #087f3e;
+    margin-bottom: 5px;
+}
+
+/* Diagram */
+.diagram {
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 30px auto 40px;
+    max-width: 1000px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Flow layout */
+.flow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Flow boxes */
+.flow-box {
+    min-width: 130px;
+    padding: 15px;
+    background-color: #e5f8ec;
+    border: 2px solid #087f3e;
+    border-radius: 8px;
