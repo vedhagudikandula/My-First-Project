@@ -1,0 +1,184 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solar Powered Ironing System Project">
+    <title>Solar Powered Ironing System</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7f6;
+            color: #222222;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #087f3e;
+            padding: 18px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 8%;
+            background: linear-gradient(135deg, #e5f8ec, #fff9dc);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            color: #075c2d;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #444444;
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #f5b400;
+            color: #222222;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #d99f00;
+        }
+
+        section {
+            padding: 70px 8%;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            color: #075c2d;
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666666;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h3 {
+            color: #087f3e;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #555555;
+        }
+
+        .working {
+            background-color: #eef8f1;
+        }
+
+        .steps {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .step {
+            background-color: white;
+            margin-bottom: 18px;
+            padding: 20px;
+            border-left: 5px solid #f5b400;
+            border-radius: 8px;
+        }
+
+        .step h3 {
+            color: #087f3e;
+            margin-bottom: 5px;
+        }
+
+        .diagram {
+            background-color: white;
+            padding: 30px;
+            margin: 30px auto 40px;
+            max-width: 1000px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .flow {
+            display: flex;
+            justify-content: center
