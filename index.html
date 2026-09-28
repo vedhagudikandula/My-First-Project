@@ -4,181 +4,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Solar Powered Ironing System Project">
+    <meta name="description" content="Solar Powered Ironing System Simulation">
     <title>Solar Powered Ironing System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<body>
 
-        html {
-            scroll-behavior: smooth;
-        }
+<header>
+    <nav>
+        <div class="logo">☀️ Solar Ironing</div>
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f7f6;
-            color: #222222;
-            line-height: 1.6;
-        }
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#problem">Problem</a></li>
+            <li><a href="#solution">Solution</a></li>
+            <li><a href="#simulation">Simulation</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+        </ul>
+    </nav>
+</header>
 
-        header {
-            background-color: #087f3e;
-            padding: 18px 8%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+<main>
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="sun">☀️</div>
 
-        .logo {
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-        }
+            <h1>Solar Powered Ironing System</h1>
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
+            <p>
+                A browser-based model that demonstrates how solar energy
+                could be used to power an electric ironing system.
+            </p>
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+            <a href="#simulation" class="button">
+                Run Simulation
+            </a>
+        </div>
+    </section>
 
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
+    <section id="problem">
+        <div class="container">
 
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 8%;
-            background: linear-gradient(135deg, #e5f8ec, #fff9dc);
-        }
+            <div class="section-title">
+                <h2>The Problem</h2>
+                <p>Why explore an alternative to coal-based ironing?</p>
+            </div>
 
-        .hero-content {
-            max-width: 850px;
-        }
+            <div class="card">
+                <p>
+                    Some traditional ironing systems use coal as a direct
+                    heating fuel. This project explores an alternative
+                    approach using electricity generated from solar energy.
+                </p>
+            </div>
 
-        .hero h1 {
-            color: #075c2d;
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
+        </div>
+    </section>
 
-        .hero p {
-            color: #444444;
-            font-size: 20px;
-            margin-bottom: 30px;
-        }
+    <section id="solution">
+        <div class="container">
 
-        .button {
-            display: inline-block;
-            background-color: #f5b400;
-            color: #222222;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+            <div class="section-title">
+                <h2>Our Proposed Solution</h2>
+                <p>Solar energy for an electric ironing system</p>
+            </div>
 
-        .button:hover {
-            background-color: #d99f00;
-        }
+            <div class="flow">
 
-        section {
-            padding: 70px 8%;
-        }
+                <div class="flow-box">
+                    <span>☀️</span>
+                    <strong>Solar Panel</strong>
+                    <small>Generates energy</small>
+                </div>
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-        }
+                <div class="arrow">→</div>
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+                <div class="flow-box">
+                    <span>🔌</span>
+                    <strong>Energy System</strong>
+                    <small>Manages energy</small>
+                </div>
 
-        .section-title h2 {
-            color: #075c2d;
-            font-size: 34px;
-            margin-bottom: 10px;
-        }
+                <div class="arrow">→</div>
 
-        .section-title p {
-            color: #666666;
-        }
+                <div class="flow-box">
+                    <span>🔋</span>
+                    <strong>Battery</strong>
+                    <small>Stores energy</small>
+                </div>
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-        }
+                <div class="arrow">→</div>
 
-        .card {
-            background-color: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        }
+                <div class="flow-box">
+                    <span>👕</span>
+                    <strong>Electric Iron</strong>
+                    <small>Uses energy</small>
+                </div>
 
-        .card h3 {
-            color: #087f3e;
-            margin-bottom: 10px;
-        }
+            </div>
 
-        .card p {
-            color: #555555;
-        }
+        </div>
+    </section>
 
-        .working {
-            background-color: #eef8f1;
-        }
+    <section class="simulation-section" id="simulation">
+        <div class="container">
 
-        .steps {
-            max-width: 800px;
-            margin: auto;
-        }
+            <div class="section-title">
+                <h2>⚡ Live Solar Ironing Simulation</h2>
+                <p>
+                    This is a software model using simulated values.
+                    It does not control a real iron.
+                </p>
+            </div>
 
-        .step {
-            background-color: white;
-            margin-bottom: 18px;
-            padding: 20px;
-            border-left: 5px solid #f5b400;
-            border-radius: 8px;
-        }
+            <div class="simulation-panel">
 
-        .step h3 {
-            color: #087f3e;
-            margin-bottom: 5px;
-        }
+                <div class="controls">
 
-        .diagram {
-            background-color: white;
-            padding: 30px;
-            margin: 30px auto 40px;
-            max-width: 1000px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            text-align: center;
-        }
+                    <div class="control-group">
+                        <label for="sunlight">
+                            ☀️ Sunlight
+                        </label>
 
-        .flow {
-            display: flex;
-            justify-content: center
+                        <input
+                            type="range"
+                            id="sunlight"
+                            min="0"
+                            max="100"
+                            value="80"
+                        >
+
+                        <span id="sunlightValue">80%</span>
+                    </div>
+
+                    <div c
